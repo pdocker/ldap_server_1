@@ -5,7 +5,7 @@ FROM fedora:24
 MAINTAINER "Pablo Prieto Asensio"
 
 # Basic Installations
-RUN dnf update vi
+RUN dnf -y update vi
 RUN dnf -y install \
 	nmap\
 	procps\
