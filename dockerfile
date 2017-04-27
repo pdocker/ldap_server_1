@@ -5,6 +5,7 @@ FROM fedora:24
 MAINTAINER "Pablo Prieto Asensio"
 
 # Basic Installations
+RUN dnf update vi
 RUN dnf -y install \
 	nmap\
 	procps\
@@ -12,8 +13,8 @@ RUN dnf -y install \
 	iputils\
 	passwd\
 	man-db\
-	tree\ 
-	httpd\ 
+	tree\
+	vim\  
 	openldap\
 	openldap-servers\
 	openldap-clients
