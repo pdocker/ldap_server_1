@@ -17,23 +17,20 @@ RUN dnf -y install \
 	vim\  
 	openldap\
 	openldap-servers\
-	openldap-clients\
-	nss-pam-ldapd\
-	cyrus-sasl-ldap\
-	krb5-server-ldap
+	openldap-clients
 
 # Set Work Directory
 WORKDIR /opt/ldap_files
 
 # Copy directory
-COPY ldap_files/* /opt/ldap_files/
+COPY ldap_projecte/* /opt/ldap_files/
 
 # Execute ldap script
 RUN chmod +x startup_ldap.sh
 RUN bash startup_ldap.sh
 
 # Open de necessary ports
-EXPOSE 389
+EXPOSE 389 636
 
 # Run bash & ldap-daemon
 ENTRYPOINT /usr/sbin/slapd & /bin/bash
