@@ -7,6 +7,7 @@ cp -r nsswitch.conf /etc/
 cp -r ldap.conf /etc/
 cp -r ldap.conf /etc/openldap/
 cp cacert.pem /etc/openldap/certs/
+cp cakey.pem /etc/openldap/certs/
 cp servercert.pem /etc/openldap/certs/
 cp serverkey.pem /etc/openldap/certs/
 cp identity.schema /etc/openldap/schema/identity.schema

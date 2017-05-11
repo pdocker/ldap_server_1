@@ -25,6 +25,7 @@ WORKDIR /opt/ldap_files
 # Copy directory
 COPY ldap_projecte/* /opt/ldap_files/
 
+
 # Execute ldap script
 RUN chmod +x startup_ldap.sh
 RUN bash startup_ldap.sh
@@ -33,4 +34,4 @@ RUN bash startup_ldap.sh
 EXPOSE 389 636
 
 # Run bash & ldap-daemon
-ENTRYPOINT /usr/sbin/slapd -u ldap -h "ldap:/// ldaps:///" & /bin/bash 
+ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"

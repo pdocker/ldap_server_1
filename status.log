@@ -1,0 +1,326 @@
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 661.5 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> 294894a8a69d
+Removing intermediate container 785426cc2016
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in c890dc2500aa
+ ---> 5316709512ff
+Removing intermediate container c890dc2500aa
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in 03af504bcddb
+[91m59144828 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144828 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m ---> 5a0bb8a8b715
+Removing intermediate container 03af504bcddb
+Step 9 : EXPOSE 389 636
+ ---> Running in a0c8b4ae135d
+ ---> ae17fea312d9
+Removing intermediate container a0c8b4ae135d
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in e81cf2fa973d
+ ---> 93d7e5853e65
+Removing intermediate container e81cf2fa973d
+Successfully built 93d7e5853e65
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 663.6 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> e58f0b60bcce
+Removing intermediate container 5c0bd3bd79e3
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in 6f5669c41656
+ ---> 1df8630cd66c
+Removing intermediate container 6f5669c41656
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in 32096ae3c79e
+[91m59144910 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144910 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144911 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+slapadd: could not parse entry (line=587)
+[0m ---> 945a1fd2096c
+Removing intermediate container 32096ae3c79e
+Step 9 : EXPOSE 389 636
+ ---> Running in 2134535b0a6d
+ ---> 059dd475f5fd
+Removing intermediate container 2134535b0a6d
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 018e57123ed0
+ ---> 14c724557ba7
+Removing intermediate container 018e57123ed0
+Successfully built 14c724557ba7
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 665.6 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> cf9ed66c4d86
+Removing intermediate container 06132c78a83d
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in da6f2cc6d2d6
+ ---> f3a40029dd9c
+Removing intermediate container da6f2cc6d2d6
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in fcf772665fe7
+[91m591449a9 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m591449a9 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m591449a9 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+slapadd: could not parse entry (line=587)
+[0m ---> c436cd9c62c2
+Removing intermediate container fcf772665fe7
+Step 9 : EXPOSE 389 636
+ ---> Running in 1ef1b0829be1
+ ---> 01d969d00077
+Removing intermediate container 1ef1b0829be1
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 98b52b66fa70
+ ---> 01f203d8f121
+Removing intermediate container 98b52b66fa70
+Successfully built 01f203d8f121
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 667.1 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> 92e25a7dc2c3
+Removing intermediate container 3e0e58b5d707
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in f10776121c56
+ ---> 77152fba2bbb
+Removing intermediate container f10776121c56
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in d03248ef27bf
+[91m59144a84 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144a84 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144a84 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+slapadd: could not parse entry (line=587)
+[0m ---> e21d23c80a30
+Removing intermediate container d03248ef27bf
+Step 9 : EXPOSE 389 636
+ ---> Running in 4e0986d146d2
+ ---> 391c7542151c
+Removing intermediate container 4e0986d146d2
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 559137558f7c
+ ---> 328a01af11a9
+Removing intermediate container 559137558f7c
+Successfully built 328a01af11a9
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 670.2 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> 29e68c2b5106
+Removing intermediate container bb389dafd1f1
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in e03cb4d2c405
+ ---> 8e24c9cbd1f5
+Removing intermediate container e03cb4d2c405
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in c33b314c949d
+[91m59144b32 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144b32 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144b32 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+[0m[91mslapadd: could not parse entry (line=587)
+[0m ---> d9fe0b67c631
+Removing intermediate container c33b314c949d
+Step 9 : EXPOSE 389 636
+ ---> Running in cf5f5c8dbb24
+ ---> 1e8f1671de53
+Removing intermediate container cf5f5c8dbb24
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 8d87a870aa04
+ ---> bcdd92ad48c0
+Removing intermediate container 8d87a870aa04
+Successfully built bcdd92ad48c0
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 672.3 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> a9cb134f345a
+Removing intermediate container 70a8b8d944ed
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in 363a8592a50c
+ ---> b2b296d45c24
+Removing intermediate container 363a8592a50c
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in ecec528f53d5
+[91m59144c64 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144c64 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144c64 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+slapadd: could not parse entry (line=587)
+[0m ---> f68f50a1db4b
+Removing intermediate container ecec528f53d5
+Step 9 : EXPOSE 389 636
+ ---> Running in cc0b00dd5119
+ ---> 3ea4b74110a7
+Removing intermediate container cc0b00dd5119
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 1a3c7c854962
+ ---> 959b24f26e41
+Removing intermediate container 1a3c7c854962
+Successfully built 959b24f26e41
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 674.3 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : RUN echo "hola" > hola.txt
+ ---> Running in b6cefb356ad6
+ ---> c4be4a02c66c
+Removing intermediate container b6cefb356ad6
+Step 7 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> e0310afe1b04
+Removing intermediate container 7f3146d37504
+Step 8 : RUN chmod +x startup_ldap.sh
+ ---> Running in 4df02a3a5c3d
+ ---> 4c2a3c11aeb7
+Removing intermediate container 4df02a3a5c3d
+Step 9 : RUN bash startup_ldap.sh
+ ---> Running in 46eab396f805
+[91m59144e08 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144e08 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144e08 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+slapadd: could not parse entry (line=587)
+[0m ---> c1b7d724f9f5
+Removing intermediate container 46eab396f805
+Step 10 : EXPOSE 389 636
+ ---> Running in 36879ddbb4bd
+ ---> 26a182960ac2
+Removing intermediate container 36879ddbb4bd
+Step 11 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 4443e5b59125
+ ---> 2cb345591b6f
+Removing intermediate container 4443e5b59125
+Successfully built 2cb345591b6f
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 676.4 kB
+Step 1 : FROM fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Using cache
+ ---> f2176778f9d4
+Step 3 : RUN dnf -y update vi
+ ---> Using cache
+ ---> 4c76d22bb260
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Using cache
+ ---> 054b9b365ab6
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Using cache
+ ---> f145ee4a0a86
+Step 6 : RUN echo "hola" > hola.txt
+ ---> Running in 4fd2cc32c61f
+ ---> e17d209376c6
+Removing intermediate container 4fd2cc32c61f
+Step 7 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> b12b60123b6e
+Removing intermediate container 3548d178c7e2
+Step 8 : RUN chmod +x startup_ldap.sh
+ ---> Running in fceb03a30a7d
+ ---> 4ebb2f183174
+Removing intermediate container fceb03a30a7d
+Step 9 : RUN bash startup_ldap.sh
+ ---> Running in bdf8515399b9
+[91m59144f32 bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m59144f32 backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m[91m59144f32 <= str2entry: str2ad(b3VwcwojIEBlZHQgQVNJWC1NMDYgMjAxNgoKW2dsb2JhbF0KCXdvcmtncm91cCA9IFNBTUJBCglz): empty AttributeDescription
+[0m[91mslapadd: could not parse entry (line=587)
+[0m ---> df96a388584d
+Removing intermediate container bdf8515399b9
+Step 10 : EXPOSE 389 636
+ ---> Running in a7d592c68977
+ ---> 316a63df415e
+Removing intermediate container a7d592c68977
+Step 11 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in 042c3656eb6b
+ ---> 1cf38654417d
+Removing intermediate container 042c3656eb6b
+Successfully built 1cf38654417d
