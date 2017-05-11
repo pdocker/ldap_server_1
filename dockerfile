@@ -33,4 +33,4 @@ RUN bash startup_ldap.sh
 EXPOSE 389 636
 
 # Run bash & ldap-daemon
-ENTRYPOINT /bin/bash
+ENTRYPOINT /usr/sbin/slapd -u ldap -h "ldap:/// ldaps:///" & /bin/bash 
