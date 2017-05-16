@@ -1,0 +1,30 @@
+#Base
+dn: dc=subtree,dc=edt,dc=org
+dc: subtree
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+###Primer Nivell Unitats
+dn: ou=usuaris,dc=subtree,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+###Usuari de prova
+dn: cn=Pou,ou=usuaris,dc=subtree,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Pau Pou
+cn: Pauet Pou
+sn: Pou
+homephone: 555-222-2220
+mail: pau@edt.org
+description: Watch out for this guy
+ou: Profes
+uid: pau
+uidNumber: 5000
+gidNumber: 100
+homeDirectory: /tmp/home/pau
+userPassword: {SSHA}NDkipesNQqTFDgGJfyraLz/csZAIlk2/

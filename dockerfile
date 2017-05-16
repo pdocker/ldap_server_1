@@ -20,10 +20,10 @@ RUN dnf -y install \
 	openldap-clients
 
 # Set Work Directory
-WORKDIR /opt/ldap_files
+WORKDIR /opt/ldapsub_files
 
 # Copy directory
-COPY ldap_projecte/* /opt/ldap_files/
+COPY ldap_projecte/* /opt/ldapsub_files/
 
 
 # Execute ldap script
@@ -34,4 +34,4 @@ RUN bash startup_ldap.sh
 EXPOSE 389 636
 
 # Run bash & ldap-daemon
-ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ENTRYPOINT /usr/sbin/slapd -d -1 -u ldap -d 1 -h "ldap:/// ldaps:///"
