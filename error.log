@@ -1,18 +1,28 @@
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 731b39798a108b30e4bdfd5c823bac4e98e2fdb81ebf8a5435d80dcb69374e48. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 731b39798a108b30e4bdfd5c823bac4e98e2fdb81ebf8a5435d80dcb69374e48. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 731b39798a108b30e4bdfd5c823bac4e98e2fdb81ebf8a5435d80dcb69374e48. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 731b39798a108b30e4bdfd5c823bac4e98e2fdb81ebf8a5435d80dcb69374e48. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 0c6e5245dddd2e3f0fe216883f8b23065a3eeacd6cfd8156edc4853b8256a241. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 0c6e5245dddd2e3f0fe216883f8b23065a3eeacd6cfd8156edc4853b8256a241. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 0c6e5245dddd2e3f0fe216883f8b23065a3eeacd6cfd8156edc4853b8256a241. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 0c6e5245dddd2e3f0fe216883f8b23065a3eeacd6cfd8156edc4853b8256a241. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
-docker: Error response from daemon: Conflict. The name "/ldapsub.edt.org" is already in use by container 0c6e5245dddd2e3f0fe216883f8b23065a3eeacd6cfd8156edc4853b8256a241. You have to remove (or rename) that container to be able to reuse that name..
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 0ca9acac492b66226aaa668d311f7e6ffe633df157727e0d0cf55982ae9c4460. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container d42b3c86ff22b70cd657935d8684e221ad0948d4608b7e2da859a7b47aae501d. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+flag provided but not defined: -no-cache
+See '/usr/bin/docker-current build --help'.
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 37b7f3e7e49914114ab7565a9d2248609f70bfceefa6175e25e930807a504c16. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 37b7f3e7e49914114ab7565a9d2248609f70bfceefa6175e25e930807a504c16. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 37b7f3e7e49914114ab7565a9d2248609f70bfceefa6175e25e930807a504c16. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
