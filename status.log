@@ -952,3 +952,288 @@ Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
  ---> c8dd70aa1161
 Removing intermediate container 5a266e15eef9
 Successfully built c8dd70aa1161
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 721.4 kB
+Step 1 : FROM fedora:24
+Trying to pull repository docker.io/library/fedora ... 
+24: Pulling from docker.io/library/fedora
+2bf01635e2a0: Pulling fs layer
+2bf01635e2a0: Verifying Checksum
+2bf01635e2a0: Download complete
+2bf01635e2a0: Pull complete
+2bf01635e2a0: Pull complete
+Digest: sha256:7ffee69dbfaea363cba55db07942a5c0d29f291eaf510edd6c07f139001f4174
+Status: Downloaded newer image for docker.io/fedora:24
+ ---> f623aaef07f0
+Step 2 : MAINTAINER "Pablo Prieto Asensio"
+ ---> Running in a4ebb2d067b5
+ ---> 7030fa0f58c7
+Removing intermediate container a4ebb2d067b5
+Step 3 : RUN dnf -y update vi
+ ---> Running in 117c9843af5a
+Last metadata expiration check: 0:00:16 ago on Wed May 31 10:24:35 2017.
+Dependencies resolved.
+================================================================================
+ Package            Arch          Version                  Repository      Size
+================================================================================
+Upgrading:
+ vim-minimal        x86_64        2:8.0.600-1.fc24         updates        520 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 520 k
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           411 kB/s | 520 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Upgrading   : vim-minimal-2:8.0.600-1.fc24.x86_64                         1/2 
+  Cleanup     : vim-minimal-2:7.4.1718-1.fc24.x86_64                        2/2 
+  Verifying   : vim-minimal-2:8.0.600-1.fc24.x86_64                         1/2 
+  Verifying   : vim-minimal-2:7.4.1718-1.fc24.x86_64                        2/2 
+
+Upgraded:
+  vim-minimal.x86_64 2:8.0.600-1.fc24                                           
+
+Complete!
+ ---> fd5a66597dee
+Removing intermediate container 117c9843af5a
+Step 4 : RUN dnf -y install 	nmap	procps	iproute	iputils	passwd	man-db	tree	vim	openldap	openldap-servers	openldap-clients
+ ---> Running in 7085fbed1aba
+Last metadata expiration check: 0:00:34 ago on Wed May 31 10:24:35 2017.
+[91mPackage openldap-2.4.44-1.fc24.x86_64 is already installed, skipping.
+[0mDependencies resolved.
+================================================================================
+ Package                    Arch       Version                Repository   Size
+================================================================================
+Installing:
+ gpm-libs                   x86_64     1.20.7-9.fc24          fedora       36 k
+ groff-base                 x86_64     1.22.3-8.fc24          fedora      1.0 M
+ iproute                    x86_64     4.4.0-4.fc24           updates     661 k
+ iputils                    x86_64     20160308-3.fc24        updates     157 k
+ less                       x86_64     481-5.fc24             fedora      157 k
+ libpcap                    x86_64     14:1.7.4-2.fc24        fedora      148 k
+ libpipeline                x86_64     1.4.1-2.fc24           fedora       51 k
+ libtool-ltdl               x86_64     2.4.6-13.fc24          updates      54 k
+ libuser                    x86_64     0.62-3.fc24            fedora      397 k
+ linux-atm-libs             x86_64     2.5.1-14.fc24          fedora       40 k
+ man-db                     x86_64     2.7.5-3.fc24           fedora      827 k
+ nmap                       x86_64     2:7.40-1.fc24          updates     5.4 M
+ nmap-ncat                  x86_64     2:7.40-1.fc24          updates     228 k
+ openldap-clients           x86_64     2.4.44-1.fc24          fedora      190 k
+ openldap-servers           x86_64     2.4.44-1.fc24          fedora      2.1 M
+ passwd                     x86_64     0.79-8.fc24            fedora      109 k
+ perl                       x86_64     4:5.22.3-370.fc24      updates     6.0 M
+ perl-Carp                  noarch     1.38-2.fc24            fedora       28 k
+ perl-Errno                 x86_64     1.23-370.fc24          updates      64 k
+ perl-Exporter              noarch     5.72-349.fc24          fedora       33 k
+ perl-File-Path             noarch     2.12-2.fc24            fedora       34 k
+ perl-IO                    x86_64     1.35-370.fc24          updates     129 k
+ perl-PathTools             x86_64     3.62-3.fc24            updates      88 k
+ perl-Scalar-List-Utils     x86_64     3:1.46-1.fc24          updates      64 k
+ perl-Socket                x86_64     3:2.024-1.fc24         updates      56 k
+ perl-Text-Tabs+Wrap        noarch     2013.0523-347.fc24     fedora       23 k
+ perl-Unicode-Normalize     x86_64     1.25-2.fc24            fedora       80 k
+ perl-constant              noarch     1.33-348.fc24          fedora       24 k
+ perl-libs                  x86_64     4:5.22.3-370.fc24      updates     1.4 M
+ perl-macros                x86_64     4:5.22.3-370.fc24      updates      60 k
+ perl-parent                noarch     1:0.234-4.fc24         fedora       18 k
+ perl-threads               x86_64     1:2.02-3.fc24          fedora       58 k
+ perl-threads-shared        x86_64     1.48-347.fc24          fedora       44 k
+ procps-ng                  x86_64     3.3.10-11.fc24         fedora      389 k
+ python                     x86_64     2.7.13-2.fc24          updates      96 k
+ python-libs                x86_64     2.7.13-2.fc24          updates     6.2 M
+ python-pip                 noarch     8.0.2-1.fc24           fedora      1.7 M
+ python2-setuptools         noarch     20.1.1-1.fc24          fedora      417 k
+ tcp_wrappers-libs          x86_64     7.6-83.fc24            fedora       72 k
+ tree                       x86_64     1.7.0-6.fc24           fedora       56 k
+ vim-common                 x86_64     2:8.0.600-1.fc24       updates     6.6 M
+ vim-enhanced               x86_64     2:8.0.600-1.fc24       updates     1.3 M
+ vim-filesystem             x86_64     2:8.0.600-1.fc24       updates      34 k
+ which                      x86_64     2.20-13.fc24           fedora       46 k
+
+Transaction Summary
+================================================================================
+Install  44 Packages
+
+Total download size: 37 M
+Installed size: 123 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                            12 MB/s |  37 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Installing  : perl-Carp-1.38-2.fc24.noarch                               1/44 
+  Installing  : perl-Exporter-5.72-349.fc24.noarch                         2/44 
+  Installing  : perl-libs-4:5.22.3-370.fc24.x86_64                         3/44 
+  Installing  : perl-Scalar-List-Utils-3:1.46-1.fc24.x86_64                4/44 
+  Installing  : libpcap-14:1.7.4-2.fc24.x86_64                             5/44 
+  Installing  : nmap-ncat-2:7.40-1.fc24.x86_64                             6/44 
+  Installing  : perl-macros-4:5.22.3-370.fc24.x86_64                       7/44 
+  Installing  : perl-Errno-1.23-370.fc24.x86_64                            8/44 
+  Installing  : perl-Socket-3:2.024-1.fc24.x86_64                          9/44 
+  Installing  : perl-Text-Tabs+Wrap-2013.0523-347.fc24.noarch             10/44 
+  Installing  : perl-Unicode-Normalize-1.25-2.fc24.x86_64                 11/44 
+  Installing  : perl-constant-1.33-348.fc24.noarch                        12/44 
+  Installing  : perl-parent-1:0.234-4.fc24.noarch                         13/44 
+  Installing  : perl-threads-shared-1.48-347.fc24.x86_64                  14/44 
+  Installing  : perl-threads-1:2.02-3.fc24.x86_64                         15/44 
+  Installing  : perl-File-Path-2.12-2.fc24.noarch                         16/44 
+  Installing  : perl-PathTools-3.62-3.fc24.x86_64                         17/44 
+  Installing  : perl-IO-1.35-370.fc24.x86_64                              18/44 
+  Installing  : perl-4:5.22.3-370.fc24.x86_64                             19/44 
+  Installing  : libtool-ltdl-2.4.6-13.fc24.x86_64                         20/44 
+  Installing  : python-libs-2.7.13-2.fc24.x86_64                          21/44 
+  Installing  : python-pip-8.0.2-1.fc24.noarch                            22/44 
+  Installing  : python2-setuptools-20.1.1-1.fc24.noarch                   23/44 
+  Installing  : python-2.7.13-2.fc24.x86_64                               24/44 
+  Installing  : vim-filesystem-2:8.0.600-1.fc24.x86_64                    25/44 
+  Installing  : vim-common-2:8.0.600-1.fc24.x86_64                        26/44 
+  Installing  : which-2.20-13.fc24.x86_64                                 27/44 
+  Installing  : gpm-libs-1.20.7-9.fc24.x86_64                             28/44 
+  Installing  : linux-atm-libs-2.5.1-14.fc24.x86_64                       29/44 
+  Installing  : tcp_wrappers-libs-7.6-83.fc24.x86_64                      30/44 
+  Installing  : libpipeline-1.4.1-2.fc24.x86_64                           31/44 
+  Installing  : less-481-5.fc24.x86_64                                    32/44 
+  Installing  : groff-base-1.22.3-8.fc24.x86_64                           33/44 
+  Installing  : libuser-0.62-3.fc24.x86_64                                34/44 
+  Installing  : passwd-0.79-8.fc24.x86_64                                 35/44 
+  Installing  : man-db-2.7.5-3.fc24.x86_64                                36/44 
+  Installing  : openldap-servers-2.4.44-1.fc24.x86_64                     37/44 
+  Installing  : iproute-4.4.0-4.fc24.x86_64                               38/44 
+  Installing  : vim-enhanced-2:8.0.600-1.fc24.x86_64                      39/44 
+  Installing  : nmap-2:7.40-1.fc24.x86_64                                 40/44 
+  Installing  : iputils-20160308-3.fc24.x86_64                            41/44 
+  Installing  : procps-ng-3.3.10-11.fc24.x86_64                           42/44 
+  Installing  : openldap-clients-2.4.44-1.fc24.x86_64                     43/44 
+  Installing  : tree-1.7.0-6.fc24.x86_64                                  44/44[91mFailed to connect to bus: No such file or directory
+[0m 
+  Verifying   : passwd-0.79-8.fc24.x86_64                                  1/44 
+  Verifying   : man-db-2.7.5-3.fc24.x86_64                                 2/44 
+  Verifying   : tree-1.7.0-6.fc24.x86_64                                   3/44 
+  Verifying   : openldap-servers-2.4.44-1.fc24.x86_64                      4/44 
+  Verifying   : openldap-clients-2.4.44-1.fc24.x86_64                      5/44 
+  Verifying   : libuser-0.62-3.fc24.x86_64                                 6/44 
+  Verifying   : groff-base-1.22.3-8.fc24.x86_64                            7/44 
+  Verifying   : less-481-5.fc24.x86_64                                     8/44 
+  Verifying   : libpipeline-1.4.1-2.fc24.x86_64                            9/44 
+  Verifying   : tcp_wrappers-libs-7.6-83.fc24.x86_64                      10/44 
+  Verifying   : nmap-2:7.40-1.fc24.x86_64                                 11/44 
+  Verifying   : libpcap-14:1.7.4-2.fc24.x86_64                            12/44 
+  Verifying   : nmap-ncat-2:7.40-1.fc24.x86_64                            13/44 
+  Verifying   : procps-ng-3.3.10-11.fc24.x86_64                           14/44 
+  Verifying   : iproute-4.4.0-4.fc24.x86_64                               15/44 
+  Verifying   : linux-atm-libs-2.5.1-14.fc24.x86_64                       16/44 
+  Verifying   : iputils-20160308-3.fc24.x86_64                            17/44 
+  Verifying   : vim-enhanced-2:8.0.600-1.fc24.x86_64                      18/44 
+  Verifying   : gpm-libs-1.20.7-9.fc24.x86_64                             19/44 
+  Verifying   : which-2.20-13.fc24.x86_64                                 20/44 
+  Verifying   : vim-common-2:8.0.600-1.fc24.x86_64                        21/44 
+  Verifying   : perl-libs-4:5.22.3-370.fc24.x86_64                        22/44 
+  Verifying   : perl-Carp-1.38-2.fc24.noarch                              23/44 
+  Verifying   : perl-Exporter-5.72-349.fc24.noarch                        24/44 
+  Verifying   : perl-4:5.22.3-370.fc24.x86_64                             25/44 
+  Verifying   : perl-File-Path-2.12-2.fc24.noarch                         26/44 
+  Verifying   : perl-Text-Tabs+Wrap-2013.0523-347.fc24.noarch             27/44 
+  Verifying   : perl-Unicode-Normalize-1.25-2.fc24.x86_64                 28/44 
+  Verifying   : perl-constant-1.33-348.fc24.noarch                        29/44 
+  Verifying   : perl-parent-1:0.234-4.fc24.noarch                         30/44 
+  Verifying   : perl-threads-1:2.02-3.fc24.x86_64                         31/44 
+  Verifying   : perl-threads-shared-1.48-347.fc24.x86_64                  32/44 
+  Verifying   : vim-filesystem-2:8.0.600-1.fc24.x86_64                    33/44 
+  Verifying   : perl-IO-1.35-370.fc24.x86_64                              34/44 
+  Verifying   : perl-PathTools-3.62-3.fc24.x86_64                         35/44 
+  Verifying   : perl-Scalar-List-Utils-3:1.46-1.fc24.x86_64               36/44 
+  Verifying   : perl-macros-4:5.22.3-370.fc24.x86_64                      37/44 
+  Verifying   : python-2.7.13-2.fc24.x86_64                               38/44 
+  Verifying   : python-pip-8.0.2-1.fc24.noarch                            39/44 
+  Verifying   : python2-setuptools-20.1.1-1.fc24.noarch                   40/44 
+  Verifying   : python-libs-2.7.13-2.fc24.x86_64                          41/44 
+  Verifying   : libtool-ltdl-2.4.6-13.fc24.x86_64                         42/44 
+  Verifying   : perl-Errno-1.23-370.fc24.x86_64                           43/44 
+  Verifying   : perl-Socket-3:2.024-1.fc24.x86_64                         44/44 
+
+Installed:
+  gpm-libs.x86_64 1.20.7-9.fc24                                                 
+  groff-base.x86_64 1.22.3-8.fc24                                               
+  iproute.x86_64 4.4.0-4.fc24                                                   
+  iputils.x86_64 20160308-3.fc24                                                
+  less.x86_64 481-5.fc24                                                        
+  libpcap.x86_64 14:1.7.4-2.fc24                                                
+  libpipeline.x86_64 1.4.1-2.fc24                                               
+  libtool-ltdl.x86_64 2.4.6-13.fc24                                             
+  libuser.x86_64 0.62-3.fc24                                                    
+  linux-atm-libs.x86_64 2.5.1-14.fc24                                           
+  man-db.x86_64 2.7.5-3.fc24                                                    
+  nmap.x86_64 2:7.40-1.fc24                                                     
+  nmap-ncat.x86_64 2:7.40-1.fc24                                                
+  openldap-clients.x86_64 2.4.44-1.fc24                                         
+  openldap-servers.x86_64 2.4.44-1.fc24                                         
+  passwd.x86_64 0.79-8.fc24                                                     
+  perl.x86_64 4:5.22.3-370.fc24                                                 
+  perl-Carp.noarch 1.38-2.fc24                                                  
+  perl-Errno.x86_64 1.23-370.fc24                                               
+  perl-Exporter.noarch 5.72-349.fc24                                            
+  perl-File-Path.noarch 2.12-2.fc24                                             
+  perl-IO.x86_64 1.35-370.fc24                                                  
+  perl-PathTools.x86_64 3.62-3.fc24                                             
+  perl-Scalar-List-Utils.x86_64 3:1.46-1.fc24                                   
+  perl-Socket.x86_64 3:2.024-1.fc24                                             
+  perl-Text-Tabs+Wrap.noarch 2013.0523-347.fc24                                 
+  perl-Unicode-Normalize.x86_64 1.25-2.fc24                                     
+  perl-constant.noarch 1.33-348.fc24                                            
+  perl-libs.x86_64 4:5.22.3-370.fc24                                            
+  perl-macros.x86_64 4:5.22.3-370.fc24                                          
+  perl-parent.noarch 1:0.234-4.fc24                                             
+  perl-threads.x86_64 1:2.02-3.fc24                                             
+  perl-threads-shared.x86_64 1.48-347.fc24                                      
+  procps-ng.x86_64 3.3.10-11.fc24                                               
+  python.x86_64 2.7.13-2.fc24                                                   
+  python-libs.x86_64 2.7.13-2.fc24                                              
+  python-pip.noarch 8.0.2-1.fc24                                                
+  python2-setuptools.noarch 20.1.1-1.fc24                                       
+  tcp_wrappers-libs.x86_64 7.6-83.fc24                                          
+  tree.x86_64 1.7.0-6.fc24                                                      
+  vim-common.x86_64 2:8.0.600-1.fc24                                            
+  vim-enhanced.x86_64 2:8.0.600-1.fc24                                          
+  vim-filesystem.x86_64 2:8.0.600-1.fc24                                        
+  which.x86_64 2.20-13.fc24                                                     
+
+Complete!
+ ---> dfa63f538d13
+Removing intermediate container 7085fbed1aba
+Step 5 : WORKDIR /opt/ldap_files
+ ---> Running in 26e1a8e12f42
+ ---> 493772855f9e
+Removing intermediate container 26e1a8e12f42
+Step 6 : COPY ldap_projecte/* /opt/ldap_files/
+ ---> 4da27d61da55
+Removing intermediate container dae568b5c896
+Step 7 : RUN chmod +x startup_ldap.sh
+ ---> Running in 49a719a26640
+ ---> d33da3951ee8
+Removing intermediate container 49a719a26640
+Step 8 : RUN bash startup_ldap.sh
+ ---> Running in 43e062cdcfb8
+[91m592e9a7d bdb_db_open: database "dc=edt,dc=org": db_open(/var/lib/ldap/id2entry.bdb) failed: No such file or directory (2).
+[0m[91m592e9a7d backend_startup_one (type=bdb, suffix="dc=edt,dc=org"): bi_db_open failed! (2)
+slap_startup failed (test would succeed using the -u switch)
+[0m ---> f30fd33b75f7
+Removing intermediate container 43e062cdcfb8
+Step 9 : EXPOSE 389 636
+ ---> Running in d8b08d782959
+ ---> 0bba9be4227c
+Removing intermediate container d8b08d782959
+Step 10 : ENTRYPOINT /usr/sbin/slapd -u ldap -d 1 -h "ldap:/// ldaps:///"
+ ---> Running in d075ff9a6021
+ ---> 3a19107bef41
+Removing intermediate container d075ff9a6021
+Successfully built 3a19107bef41
+d24c36d489ac895646608514df99a80755189f2e7d51d21669e753e7377fff09

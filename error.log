@@ -26,3 +26,9 @@ docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is alread
 See '/usr/bin/docker-current run --help'.
 docker: Error response from daemon: Conflict. The name "/ldap.edt.org" is already in use by container 37b7f3e7e49914114ab7565a9d2248609f70bfceefa6175e25e930807a504c16. You have to remove (or rename) that container to be able to reuse that name..
 See '/usr/bin/docker-current run --help'.
+Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See '/usr/bin/docker-current run --help'.
+Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See '/usr/bin/docker-current run --help'.

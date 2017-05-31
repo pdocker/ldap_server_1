@@ -12,7 +12,7 @@ cp servercert.pem /etc/openldap/certs/
 cp serverkey.pem /etc/openldap/certs/
 cp identity.schema /etc/openldap/schema/identity.schema
 chmod 650 /etc/openldap/certs/*
-slaptest -f slapd.conf -F /etc/openldap/slapd.d
+slaptest -d -1 -f slapd.conf -F /etc/openldap/slapd.d
 slapadd -F /etc/openldap/slapd.d -l organitzacio_usuaris_edt.ldif
 chown -R ldap.ldap /etc/openldap/certs/
 chown -R ldap.ldap /etc/openldap/slapd.d/
